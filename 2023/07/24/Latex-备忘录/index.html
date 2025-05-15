@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Latex 备忘录 | lcr&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="本文总结作者在使用 LaTex 编写论文时使用到的相关语法。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Latex 备忘录">
+<meta property="og:url" content="http://example.com/2023/07/24/Latex-%E5%A4%87%E5%BF%98%E5%BD%95/index.html">
+<meta property="og:site_name" content="lcr&#39;s blog">
+<meta property="og:description" content="本文总结作者在使用 LaTex 编写论文时使用到的相关语法。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307241330887.png">
+<meta property="og:image" content="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307241331016.png">
+<meta property="og:image" content="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307241331023.png">
+<meta property="og:image" content="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307241331034.png">
+<meta property="og:image" content="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307241331000.png">
+<meta property="og:image" content="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307241331007.png">
+<meta property="og:image" content="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307241331018.png">
+<meta property="og:image" content="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307241331522.png">
+<meta property="og:image" content="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307241331527.png">
+<meta property="og:image" content="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307241331535.png">
+<meta property="og:image" content="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307241331544.png">
+<meta property="og:image" content="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307241331547.png">
+<meta property="og:image" content="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307241332121.png">
+<meta property="og:image" content="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307241332129.png">
+<meta property="og:image" content="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307241332139.png">
+<meta property="og:image" content="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307241332147.png">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-f9b1025827d120961741dfc060b1e32b_720w.webp">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-2d53462e978ff7a6bb2016ec1e381031_r.jpg">
+<meta property="article:published_time" content="2023-07-24T05:28:08.000Z">
+<meta property="article:modified_time" content="2023-07-24T05:52:17.749Z">
+<meta property="article:author" content="Liang Chenrui">
+<meta property="article:tag" content="Latex">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307241330887.png">
+  
+    <link rel="alternate" href="/atom.xml" title="lcr's blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">lcr&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">我心中尚未崩坏的地方</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Latex-备忘录" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/07/24/Latex-%E5%A4%87%E5%BF%98%E5%BD%95/" class="article-date">
+  <time class="dt-published" datetime="2023-07-24T05:28:08.000Z" itemprop="datePublished">2023-07-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Latex 备忘录
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>本文总结作者在使用 LaTex 编写论文时使用到的相关语法。</p>
+<span id="more"></span>
+
+<h1 id="一、符号"><a href="#一、符号" class="headerlink" title="一、符号"></a>一、符号</h1><p><img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307241330887.png"></p>
+<p><img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307241331016.png"></p>
+<p><img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307241331023.png" alt="QQ截图20230720180928"></p>
+<p><img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307241331034.png" alt="QQ截图20230720180935"></p>
+<p><img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307241331000.png"></p>
+<p><img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307241331007.png" alt="QQ截图20230720180949"></p>
+<p><img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307241331018.png" alt="QQ截图20230720180954"></p>
+<p>绝对值符号 ||：\lvert , \rvert</p>
+<p><img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307241331522.png"></p>
+<p><img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307241331527.png" alt="QQ截图20230720181006"></p>
+<p><img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307241331535.png" alt="QQ截图20230720181012"></p>
+<p><img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307241331544.png" alt="QQ截图20230720181024"></p>
+<p><img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307241331547.png" alt="QQ截图20230720181032"></p>
+<p><img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307241332121.png"></p>
+<p><img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307241332129.png" alt="QQ截图20230720181050"></p>
+<p><img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307241332139.png" alt="QQ截图20230720181057"></p>
+<p><img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307241332147.png" alt="QQ截图20230720181106"></p>
+<h1 id="二、图片"><a href="#二、图片" class="headerlink" title="二、图片"></a>二、图片</h1><h2 id="1-单张图片"><a href="#1-单张图片" class="headerlink" title="1. 单张图片"></a>1. 单张图片</h2><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;[H]</span><br><span class="line">	<span class="keyword">\centering</span></span><br><span class="line">	<span class="keyword">\includegraphics</span>&#123;figures/img.png&#125;</span><br><span class="line">	<span class="keyword">\caption</span>&#123;caption&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-并排图片"><a href="#2-并排图片" class="headerlink" title="2. 并排图片"></a>2. 并排图片</h2><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;[H]</span><br><span class="line">	<span class="keyword">\centering</span></span><br><span class="line">	<span class="keyword">\begin</span>&#123;minipage&#125;&#123;0.48<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[scale=0.45]&#123;figures/img1.png&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;caption1&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;minipage&#125;</span><br><span class="line">	<span class="keyword">\begin</span>&#123;minipage&#125;&#123;0.48<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[scale=0.47]&#123;figures/img2.png&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;caption2&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;minipage&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="三、表格"><a href="#三、表格" class="headerlink" title="三、表格"></a>三、表格</h1><h2 id="1-一般表格"><a href="#1-一般表格" class="headerlink" title="1. 一般表格"></a>1. 一般表格</h2><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;table&#125;[h!]</span><br><span class="line">	<span class="keyword">\begin</span>&#123;center&#125;</span><br><span class="line">		<span class="keyword">\begin</span>&#123;tabular&#125;&#123;c|c|c&#125; <span class="comment">% c 代表列数</span></span><br><span class="line">			<span class="keyword">\textbf</span>&#123;距离&#125; <span class="built_in">&amp;</span> <span class="keyword">\textbf</span>&#123;区域&#125; <span class="built_in">&amp;</span> <span class="keyword">\textbf</span>&#123;温度分布&#125;<span class="keyword">\\</span> <span class="comment">% \\ 代表换行</span></span><br><span class="line">			<span class="keyword">\hline</span></span><br><span class="line">			<span class="built_in">$</span>[0,25]<span class="built_in">$</span> <span class="built_in">&amp;</span> 炉前区域 <span class="built_in">&amp;</span> <span class="built_in">$</span>6x+25<span class="built_in">$</span><span class="keyword">\\</span></span><br><span class="line">			<span class="built_in">$</span>[25,197.5]<span class="built_in">$</span> <span class="built_in">&amp;</span> 小温区1-5（ 含间隙1-4）<span class="built_in">&amp;</span> <span class="built_in">$</span>175<span class="built_in">$</span><span class="keyword">\\</span></span><br><span class="line">			<span class="built_in">$</span>[197.5,202.5]<span class="built_in">$</span> <span class="built_in">&amp;</span> 间隙5 <span class="built_in">&amp;</span> <span class="built_in">$</span>175+4x<span class="built_in">$</span><span class="keyword">\\</span></span><br><span class="line">			<span class="built_in">$</span>[202.5,233]<span class="built_in">$</span> <span class="built_in">&amp;</span> 小温区6 <span class="built_in">&amp;</span> <span class="built_in">$</span>195<span class="built_in">$</span><span class="keyword">\\</span></span><br><span class="line">			<span class="built_in">$</span>[233,238]<span class="built_in">$</span> <span class="built_in">&amp;</span> 间隙6 <span class="built_in">&amp;</span> <span class="built_in">$</span>195<span class="built_in">$</span><span class="keyword">\\</span></span><br><span class="line">			<span class="built_in">$</span>[238,268.5]<span class="built_in">$</span> <span class="built_in">&amp;</span> 小温区7 <span class="built_in">&amp;</span> <span class="built_in">$</span>235<span class="built_in">$</span><span class="keyword">\\</span></span><br><span class="line">			<span class="built_in">$</span>[268.5,273.5]<span class="built_in">$</span> <span class="built_in">&amp;</span> 间隙7 <span class="built_in">&amp;</span> <span class="built_in">$</span>235+4x<span class="built_in">$</span><span class="keyword">\\</span></span><br><span class="line">			<span class="built_in">$</span>[273.5,339.5]<span class="built_in">$</span> <span class="built_in">&amp;</span> 小温区8-9（ 含间隙8）<span class="built_in">&amp;</span> <span class="built_in">$</span>255<span class="built_in">$</span><span class="keyword">\\</span></span><br><span class="line">			<span class="built_in">$</span>[339.5,435.5]<span class="built_in">$</span> <span class="built_in">&amp;</span> 小温区10-11（含间隙9-10）、炉后区域 <span class="built_in">&amp;</span> <span class="built_in">$</span>-2.4x+1068.4<span class="built_in">$</span><span class="keyword">\\</span></span><br><span class="line">		<span class="keyword">\end</span>&#123;tabular&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;炉内环境温度分布表&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;center&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;table&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-三线表"><a href="#2-三线表" class="headerlink" title="2. 三线表"></a>2. 三线表</h2><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;table&#125;[hbp]</span><br><span class="line">	<span class="keyword">\centering</span></span><br><span class="line">	<span class="keyword">\label</span>&#123;tab:pagenum&#125;</span><br><span class="line">	<span class="keyword">\begin</span>&#123;tabular&#125;&#123;llll&#125;</span><br><span class="line">		<span class="keyword">\toprule</span></span><br><span class="line">		符号 <span class="built_in">&amp;</span> 含义 <span class="keyword">\\</span></span><br><span class="line">		<span class="keyword">\midrule</span></span><br><span class="line">		<span class="built_in">$</span>T<span class="built_in">_</span>i(i=1,2,3,4,5)<span class="built_in">$</span>  <span class="built_in">&amp;</span> 各个温区的设定温度<span class="keyword">\\</span></span><br><span class="line">		<span class="built_in">$</span>T<span class="built_in">$</span>  <span class="built_in">&amp;</span> 焊接区域中心温度 <span class="keyword">\\</span></span><br><span class="line">		<span class="built_in">$</span><span class="keyword">\tau</span><span class="built_in">_</span>i(i=1,2)<span class="built_in">$</span>  <span class="built_in">&amp;</span> 两个温区分别对应的热时间常数 <span class="keyword">\\</span></span><br><span class="line">		<span class="built_in">$</span>h<span class="built_in">$</span>  <span class="built_in">&amp;</span> 热对流系数<span class="keyword">\\</span></span><br><span class="line">		<span class="built_in">$</span><span class="keyword">\delta</span> t<span class="built_in">$</span>  <span class="built_in">&amp;</span> 时间步长<span class="keyword">\\</span></span><br><span class="line">		<span class="built_in">$</span>v<span class="built_in">$</span>  <span class="built_in">&amp;</span>传送带过炉速度 <span class="keyword">\\</span></span><br><span class="line">		<span class="built_in">$</span>t<span class="built_in">_</span>i(i=1 ,2,3,4,5)<span class="built_in">$</span>  <span class="built_in">&amp;</span> 5 个特定温度的对应时间值<span class="keyword">\\</span></span><br><span class="line">		<span class="built_in">$</span>S<span class="built_in">$</span>  <span class="built_in">&amp;</span> 炉温曲线超过 217℃到峰值温度覆盖面积<span class="keyword">\\</span></span><br><span class="line">		<span class="built_in">$</span>l<span class="built_in">$</span> <span class="built_in">&amp;</span> 炉温曲线超过 217℃的部分对称度<span class="keyword">\\</span></span><br><span class="line">		<span class="keyword">\bottomrule</span></span><br><span class="line">	<span class="keyword">\end</span>&#123;tabular&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;table&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="四、公式"><a href="#四、公式" class="headerlink" title="四、公式"></a>四、公式</h1><h2 id="1-行内公式"><a href="#1-行内公式" class="headerlink" title="1. 行内公式"></a>1. 行内公式</h2><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">$</span>formula<span class="built_in">$</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-行间公式"><a href="#2-行间公式" class="headerlink" title="2. 行间公式"></a>2. 行间公式</h2><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\[</span>formula]<span class="keyword">\</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-方程组"><a href="#3-方程组" class="headerlink" title="3. 方程组"></a>3. 方程组</h2><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line">	<span class="keyword">\begin</span>&#123;cases&#125;</span><br><span class="line">		formula 1 <span class="keyword">\\</span></span><br><span class="line">		formula 2 <span class="keyword">\\</span></span><br><span class="line">		formula 3 <span class="keyword">\\</span></span><br><span class="line">	<span class="keyword">\end</span>&#123;cases&#125;</span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="五、布局"><a href="#五、布局" class="headerlink" title="五、布局"></a>五、布局</h1><p>首先声明文档类型：</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>[option]&#123;class&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic4.zhimg.com/80/v2-f9b1025827d120961741dfc060b1e32b_720w.webp" alt="img"></p>
+<p><img src="https://pic2.zhimg.com/v2-2d53462e978ff7a6bb2016ec1e381031_r.jpg" alt="img"></p>
+<p>每个文档类型可以使用的结构命令：</p>
+<p>Book:</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\part</span>&#123;&#125;, <span class="keyword">\chapter</span>&#123;&#125;, <span class="keyword">\section</span>&#123;&#125;, <span class="keyword">\subsection</span>&#123;&#125;, <span class="keyword">\subsubsection</span>&#123;&#125;, <span class="keyword">\paragraph</span>&#123;&#125;, <span class="keyword">\subparagraph</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Report:</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\part</span>&#123;&#125;, <span class="keyword">\chapter</span>&#123;&#125;, <span class="keyword">\section</span>&#123;&#125;, <span class="keyword">\subsection</span>&#123;&#125;, <span class="keyword">\subsubsection</span>&#123;&#125;, <span class="keyword">\paragraph</span>&#123;&#125;, <span class="keyword">\subparagraph</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Article:</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\part</span>&#123;&#125;, <span class="keyword">\section</span>&#123;&#125;, <span class="keyword">\subsection</span>&#123;&#125;, <span class="keyword">\subsubsection</span>&#123;&#125;, <span class="keyword">\paragraph</span>&#123;&#125;, <span class="keyword">\subparagraph</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="六、其他"><a href="#六、其他" class="headerlink" title="六、其他"></a>六、其他</h1><ul>
+<li>粗体</li>
+</ul>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\textbf</span>&#123;word&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>有序列表</li>
+</ul>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;enumerate&#125;</span><br><span class="line">	<span class="keyword">\item</span> item1</span><br><span class="line">	<span class="keyword">\item</span> item2</span><br><span class="line"><span class="keyword">\end</span>&#123;enumerate&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>代码</li>
+</ul>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;lstlisting&#125;</span><br><span class="line">	code</span><br><span class="line"><span class="keyword">\end</span>&#123;lstlisting&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>注释</li>
+</ul>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 注释</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/07/24/Latex-%E5%A4%87%E5%BF%98%E5%BD%95/" data-id="cmap5xrep0003zgi23bne89rf" data-title="Latex 备忘录" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Latex/" rel="tag">Latex</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/08/11/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          论文笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/07/12/%E6%97%A0%E7%9B%91%E7%9D%A3%E7%BD%91%E7%BB%9C%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E7%A0%94%E7%A9%B6-%E5%89%8D%E5%AF%BC%E7%9F%A5%E8%AF%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">无监督网络入侵检测研究 前导知识</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%99/">博客建站</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A7%91%E7%A0%94/">科研</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChatGPT/" rel="tag">ChatGPT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Latex/" rel="tag">Latex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-pages/" rel="tag">github pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ChatGPT/" style="font-size: 10px;">ChatGPT</a> <a href="/tags/Latex/" style="font-size: 10px;">Latex</a> <a href="/tags/github-pages/" style="font-size: 10px;">github pages</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;">博客</a> <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 20px;">网络</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">五月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">八月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">七月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">六月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/05/15/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/11/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/24/Latex-%E5%A4%87%E5%BF%98%E5%BD%95/">Latex 备忘录</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/12/%E6%97%A0%E7%9B%91%E7%9D%A3%E7%BD%91%E7%BB%9C%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E7%A0%94%E7%A9%B6-%E5%89%8D%E5%AF%BC%E7%9F%A5%E8%AF%86/">无监督网络入侵检测研究 前导知识</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/02/ChatGPT-prompts/">ChatGPT prompts 合集</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 Liang Chenrui<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

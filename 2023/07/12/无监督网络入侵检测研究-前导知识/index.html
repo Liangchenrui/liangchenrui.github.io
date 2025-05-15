@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>无监督网络入侵检测研究 前导知识 | lcr&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="根据立项书和论文，总结了研究领域的一部分基础知识。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="无监督网络入侵检测研究 前导知识">
+<meta property="og:url" content="http://example.com/2023/07/12/%E6%97%A0%E7%9B%91%E7%9D%A3%E7%BD%91%E7%BB%9C%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E7%A0%94%E7%A9%B6-%E5%89%8D%E5%AF%BC%E7%9F%A5%E8%AF%86/index.html">
+<meta property="og:site_name" content="lcr&#39;s blog">
+<meta property="og:description" content="根据立项书和论文，总结了研究领域的一部分基础知识。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-07-12T13:54:59.000Z">
+<meta property="article:modified_time" content="2023-07-12T14:56:44.080Z">
+<meta property="article:author" content="Liang Chenrui">
+<meta property="article:tag" content="网络">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="lcr's blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">lcr&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">我心中尚未崩坏的地方</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-无监督网络入侵检测研究-前导知识" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/07/12/%E6%97%A0%E7%9B%91%E7%9D%A3%E7%BD%91%E7%BB%9C%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E7%A0%94%E7%A9%B6-%E5%89%8D%E5%AF%BC%E7%9F%A5%E8%AF%86/" class="article-date">
+  <time class="dt-published" datetime="2023-07-12T13:54:59.000Z" itemprop="datePublished">2023-07-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%A7%91%E7%A0%94/">科研</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      无监督网络入侵检测研究 前导知识
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>根据立项书和论文，总结了研究领域的一部分基础知识。</p>
+<span id="more"></span>
+
+<h1 id="入侵检测系统-IDS"><a href="#入侵检测系统-IDS" class="headerlink" title="入侵检测系统 (IDS)"></a>入侵检测系统 (IDS)</h1><p>IDS（入侵检测系统）是一种安全工具，旨在检测计算机系统、网络或应用程序中的恶意活动和安全漏洞。它通过监视计算机系统、网络或应用程序的活动来检测潜在的入侵行为，并发出警报以通知管理员采取适当的措施。</p>
+<ul>
+<li><strong>NIDS（Network- based intrusion detection system）</strong></li>
+</ul>
+<p>IDS 分类：</p>
+<h2 id="1-基于特征的系统-signature-based-system"><a href="#1-基于特征的系统-signature-based-system" class="headerlink" title="1. 基于特征的系统 (signature-based system)"></a>1. 基于特征的系统 (signature-based system)</h2><p>要求根据以前的攻击知识来产生一个准确的特征。特征可以是预定义的，也可以通过机器学习算法自动提取。</p>
+<h2 id="2-基于异常的系统-anomaly-based-system"><a href="#2-基于异常的系统-anomaly-based-system" class="headerlink" title="2. 基于异常的系统 (anomaly-based system)"></a>2. 基于异常的系统 (anomaly-based system)</h2><p>不依赖现有攻击的以前知识，可以检测到未知攻击，具有较好的自适应性，但可能存在较高的误报率。</p>
+<h1 id="图神经网络（Graph-Neural-Networks，GNN）"><a href="#图神经网络（Graph-Neural-Networks，GNN）" class="headerlink" title="图神经网络（Graph Neural Networks，GNN）"></a>图神经网络（Graph Neural Networks，GNN）</h1><p>GNN是深度学习在图结构上的一个分支。GNN是一种连接模型，通过网络中节点之间的信息传递的方式来获取图中的依存关系，GNN通过从节点任意深度的邻居来更新该节点状态，这个状态能够表示状态信息。</p>
+<p>GNN是对图上的<strong>所有属性进行的一个可以优化的变换</strong>，它的输入是一个图，输出也是个图。<strong>可以把图神经网络看做是一个图数据的在三个维度的特征提取器。</strong></p>
+<ul>
+<li>图卷积网络（Graph Convolution Networks，GCN）</li>
+</ul>
+<p>将卷积运算从传统数据（例如图像）推广到图数据。</p>
+<ul>
+<li><p>图注意力网络（Graph Attention Networks）</p>
+</li>
+<li><p>图的自编码(Graph Autoencoders)</p>
+<p>该模型通常使用无监督学习(unsupervised)的方式。</p>
+</li>
+</ul>
+<p><strong>不同GNN的本质差别就在于它们如何进行节点之间的信息传递和计算，也就是它们的消息传递机制不同。</strong></p>
+<h1 id="无监督学习-Unsupervised-Learning"><a href="#无监督学习-Unsupervised-Learning" class="headerlink" title="无监督学习 (Unsupervised Learning)"></a>无监督学习 (Unsupervised Learning)</h1><p>监督学习：一种目的明确的训练方式，通过已知因素和已知的结果，通过机器训练，使机器能学会通过已知因素得到未知的结果。</p>
+<p>无监督学习：没有给定事先标记过的训练示例，自动对输入的资料进行分类或分群，再根据这些数据分析这些数据的特征。本质上是一个统计手段，在没有标签的数据里可以发现潜在的一些结构的一种训练方式。</p>
+<p>无监督学习的主要运用包含：聚类分析（cluster analysis）、关系规则（association rule）、维度缩减（dimensionality reduce）。</p>
+<p>特点：</p>
+<ul>
+<li><p><strong>没有明确的目的</strong></p>
+</li>
+<li><p><strong>不需要给数据打标签</strong></p>
+</li>
+<li><p><strong>无法量化效果</strong></p>
+</li>
+</ul>
+<p>常见的两类无监督算法：</p>
+<ul>
+<li>聚类</li>
+</ul>
+<p>简单说就是一种自动分类的方法，在监督学习中，你很清楚每一个分类是什么，但是聚类则不是，你并不清楚聚类后的几个分类每个代表什么意思。</p>
+<ul>
+<li>降维</li>
+</ul>
+<p>降维看上去很像压缩。这是为了在尽可能保存相关的结构的同时降低数据的复杂度。</p>
+<h1 id="扩散模型（Diffusion-Models）"><a href="#扩散模型（Diffusion-Models）" class="headerlink" title="扩散模型（Diffusion Models）"></a>扩散模型（Diffusion Models）</h1><p>用于图像生成。实现从噪声（采样自简单的分布）生成目标数据样本。</p>
+<p>扩散模型包括两个过程：前向过程（forward process）和反向过程（reverse process），其中前向过程又称为扩散过程（diffusion process）。无论是前向过程还是反向过程都是一个参数化的马尔可夫链（Markov chain），其中反向过程可用于生成数据样本。</p>
+<p>参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/563661713">扩散模型之DDPM - 知乎 (zhihu.com)</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/07/12/%E6%97%A0%E7%9B%91%E7%9D%A3%E7%BD%91%E7%BB%9C%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E7%A0%94%E7%A9%B6-%E5%89%8D%E5%AF%BC%E7%9F%A5%E8%AF%86/" data-id="cmap5xrew000czgi2gsbw4yed" data-title="无监督网络入侵检测研究 前导知识" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/07/24/Latex-%E5%A4%87%E5%BF%98%E5%BD%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          Latex 备忘录
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/07/02/ChatGPT-prompts/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">ChatGPT prompts 合集</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%99/">博客建站</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A7%91%E7%A0%94/">科研</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChatGPT/" rel="tag">ChatGPT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Latex/" rel="tag">Latex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-pages/" rel="tag">github pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ChatGPT/" style="font-size: 10px;">ChatGPT</a> <a href="/tags/Latex/" style="font-size: 10px;">Latex</a> <a href="/tags/github-pages/" style="font-size: 10px;">github pages</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;">博客</a> <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 20px;">网络</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">五月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">八月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">七月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">六月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/05/15/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/11/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/24/Latex-%E5%A4%87%E5%BF%98%E5%BD%95/">Latex 备忘录</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/12/%E6%97%A0%E7%9B%91%E7%9D%A3%E7%BD%91%E7%BB%9C%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E7%A0%94%E7%A9%B6-%E5%89%8D%E5%AF%BC%E7%9F%A5%E8%AF%86/">无监督网络入侵检测研究 前导知识</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/02/ChatGPT-prompts/">ChatGPT prompts 合集</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 Liang Chenrui<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>搭建基于 GitHub + Hexo 的个人博客 | lcr&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="GitHub Pages 是通过 GitHub 托管和发布的公共网页。  Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他标记语言）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 下面正式利用 GitHub Pages 和 Hexo，从零开始搭建我的第一个个人博客。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搭建基于 GitHub + Hexo 的个人博客">
+<meta property="og:url" content="http://example.com/2023/06/23/%E6%90%AD%E5%BB%BA%E5%9F%BA%E4%BA%8E-github-hexo-%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:site_name" content="lcr&#39;s blog">
+<meta property="og:description" content="GitHub Pages 是通过 GitHub 托管和发布的公共网页。  Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他标记语言）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 下面正式利用 GitHub Pages 和 Hexo，从零开始搭建我的第一个个人博客。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307012056857.png">
+<meta property="og:image" content="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307012058987.png">
+<meta property="og:image" content="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307012101968.png">
+<meta property="og:image" content="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307012102132.png">
+<meta property="og:image" content="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307012102693.png">
+<meta property="og:image" content="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307012102873.png">
+<meta property="og:image" content="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307012103622.png">
+<meta property="og:image" content="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307012103938.png">
+<meta property="og:image" content="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307012103099.png">
+<meta property="og:image" content="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307012103868.png">
+<meta property="og:image" content="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307012104281.png">
+<meta property="article:published_time" content="2023-06-23T15:26:13.000Z">
+<meta property="article:modified_time" content="2023-07-02T11:33:33.033Z">
+<meta property="article:author" content="Liang Chenrui">
+<meta property="article:tag" content="github pages">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307012056857.png">
+  
+    <link rel="alternate" href="/atom.xml" title="lcr's blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">lcr&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">我心中尚未崩坏的地方</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-搭建基于-github-hexo-的个人博客" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/06/23/%E6%90%AD%E5%BB%BA%E5%9F%BA%E4%BA%8E-github-hexo-%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="article-date">
+  <time class="dt-published" datetime="2023-06-23T15:26:13.000Z" itemprop="datePublished">2023-06-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%99/">博客建站</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      搭建基于 GitHub + Hexo 的个人博客
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>GitHub Pages 是通过 GitHub 托管和发布的公共网页。  Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a target="_blank" rel="noopener" href="http://daringfireball.net/projects/markdown/">Markdown</a>（或其他标记语言）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<p>下面正式利用 GitHub Pages 和 Hexo，从零开始搭建我的第一个个人博客。</p>
+<span id="more"></span>
+
+<h1 id="购买域名"><a href="#购买域名" class="headerlink" title="购买域名"></a>购买域名</h1><p>选用阿里云平台购买域名：<a target="_blank" rel="noopener" href="https://wanwang.aliyun.com/?spm=5176.28055625.J_3207526240.994.3408154aZZOiD1&scm=20140722.M_9562065._.V_1">阿里云企航_万网域名_工商财税_知识产权_资质备案_智能设计_网站建设-阿里云 (aliyun.com)</a>，购买域名前先完成账号的实名认证。</p>
+<p><img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307012056857.png" alt="image-20230701205600517"></p>
+<p>选取域名：betterlcr.com</p>
+<p>所有者类型选择个人。</p>
+<p>新建个人信息模板，提交后需要审核一段时间。认证成功后会受到阿里云的短信，之后完成支付即可。</p>
+<p>购买域名成功：</p>
+<p><img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307012058987.png" alt="image-20230701205853900"></p>
+<h1 id="GitHub-创建个人仓库"><a href="#GitHub-创建个人仓库" class="headerlink" title="GitHub 创建个人仓库"></a>GitHub 创建个人仓库</h1><p>仓库名应该为：用户名.<a href="https://link.zhihu.com/?target=http://github.io">http://github.io</a> 这个用户名使用自己的GitHub帐号名称代替：</p>
+<p><img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307012101968.png" alt="image-20230701210134940"></p>
+<p>注意此处的仓库名称首字母一定要是小写，否则后面在访问时会报错。</p>
+<h1 id="配置-Hexo"><a href="#配置-Hexo" class="headerlink" title="配置 Hexo"></a>配置 Hexo</h1><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a target="_blank" rel="noopener" href="http://daringfireball.net/projects/markdown/">Markdown</a>（或其他标记语言）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。Hexo 官网：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>。</p>
+<p>安装 Hexo 需要配置 git、Node.js 环境，由于笔者已成功配置该环境，故省略。</p>
+<p>创建文件夹 blog 用于管理 Hexo 框架和将来要发布的网页。</p>
+<p>接下来在文件夹内点击右键，选择 <code>git bash here</code>，使用 npm 安装 Hexo：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p>这个安装时间较长耐心等待，安装完成后，初始化我们的博客，输入：(注意将尖括号内的 folder 替换成自己的文件夹名)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ cd &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+
+<p>新建完成后，指定文件夹的目录如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
+
+<p>可以在 <code>_config.yml</code> 文件中修改各类配置信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">title: lcr&#x27;s blog</span><br><span class="line">subtitle: &#x27;我心中尚未崩坏的地方&#x27;</span><br><span class="line">description: &#x27;personal blog&#x27;</span><br><span class="line">keywords:</span><br><span class="line">author: Liang Chenrui</span><br><span class="line">language: zh-CN</span><br><span class="line">timezone: &#x27;Asia/Shanghai&#x27;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:Liangchenrui/liangchenrui.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<p>为了检测我们的网站雏形，分别按顺序输入以下三条命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new test_my_site</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+
+<p>以上三个命令依次是新建一篇博客文章、生成网页、在本地预览的操作。更多的命令详见文档：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/commands">指令 | Hexo</a></p>
+<p>完成后，打开浏览器输入地址：<code>localhost:4000</code></p>
+<p>可以看出我们写出第一篇博客：<img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307012102132.png" alt="image-20230701210207014"></p>
+<p>最后安装Git部署插件，输入命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>在进行这一步时，我遇到了报错信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm ERR! Cannot read properties of null (reading &#x27;matches&#x27;)</span><br><span class="line"></span><br><span class="line">npm ERR! A complete log of this run can be found in:</span><br><span class="line">npm ERR!     C:\Users\Administrator\AppData\Local\npm-cache\_logs\2023-06-22T17_14_43_636Z-debug-0.log</span><br></pre></td></tr></table></figure>
+
+<p>解决方案：删除node_modules 目录 再执行上面的命令。成功解决。</p>
+<p>输入命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean </span><br><span class="line">$ hexo g </span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+
+<p>这时访问 GitHub 域名 <code>https://用户名.github.io</code> 就可以看到 Hexo 网站了。</p>
+<p><img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307012102693.png" alt="image-20230701210228650"></p>
+<h1 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h1><p>此时已经可以通过 <code>https://用户名.github.io</code> 访问网站，但为了加强个性化，可以绑定之前购买的域名。</p>
+<p>进入阿里云域名控制台，进入域名解析设置，添加如下所示的解析记录：</p>
+<p><img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307012102873.png" alt="image-20230701210246823"></p>
+<p>其中 185.199.109.153 是我的 github 的地址，可以通过 ping 命令获得。</p>
+<p>接下来进入  GitHub  仓库的 setting 设置，左侧栏选择 pages, 找到 custom domain, 输入自己的域名并保存：</p>
+<p><img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307012103622.png" alt="image-20230701210307584"></p>
+<p>需要注意的是，当改变了配置信息时，有可能此处的 Custom domain 需要重新设置，否则访问网站时会报错404。(经测试，每一次重新部署 hexo 时都要重新设置 Custom domain，暂时还没有找到好的方法解决该问题)</p>
+<p>接下来进入本地博客文件夹，进入 blog&#x2F;source 目录下，新建文本文件，命名为 CNAME，输入自己的域名。若以 www 开头，则在访问网站时必须输入以 www 开头的地址；而若不以 www 开头，则带不带 www 均可，故建议不带 www 开头。</p>
+<p><img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307012103938.png" alt="image-20230701210325896"></p>
+<p>注意保存成<strong>所有文件</strong>而不是<strong>txt文件</strong>。</p>
+<p>完成后进入 blog 目录中，右键 git bash here：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+
+<p>完成后即可通过自己的域名访问博客主页。</p>
+<p>最后需要注意将 branch 分支切换到 master, 否则网站只会显示 main 分支的 readme 页面，即刚才在localhost:4000 看到的界面：</p>
+<p><img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307012103099.png" alt="image-20230701210345046"></p>
+<p>等待一段时间后即可正常显示。</p>
+<h1 id="开启-HTTPS"><a href="#开启-HTTPS" class="headerlink" title="开启 HTTPS"></a>开启 HTTPS</h1><p>在 GitHub repository setting 的 pages 页面（刚在输入 custom domain 的下面）勾选 enforce HTTPS，HTTPS 证书部署成功需要一定时间，等大概几分钟再访问域名，就可以看到域名前面的小绿锁了。</p>
+<p><img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307012103868.png" alt="image-20230701210358836"></p>
+<h1 id="切换主题"><a href="#切换主题" class="headerlink" title="切换主题"></a>切换主题</h1><p>现在把默认主题更改成 NexT 主题，NexT 官方文档：<a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/getting-started.html">开始使用 - NexT 使用文档 (iissnan.com)</a></p>
+<p>在 Hexo 中有两份主要的配置文件，其名称都是 <code>_config.yml</code>。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。</p>
+<p>为了描述方便，在以下说明中，将前者称为 <strong>站点配置文件</strong>， 后者称为 <strong>主题配置文件</strong>。</p>
+<p>下载主题：在终端窗口下，定位到 Hexo 站点目录下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+
+<p>打开站点配置文件，修改主题为 <code>next</code>，修改语言为 <code>zh-Hans</code>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br><span class="line">language: zh-Hans</span><br></pre></td></tr></table></figure>
+
+<p>打开主题配置文件，可以更改 Scheme Settings 中的值，笔者选择了：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scheme: Pisces</span><br></pre></td></tr></table></figure>
+
+<p>到此，NexT 主题安装完成。下一步我们将验证主题是否正确启用。在切换主题之后、验证之前， 我们最好使用 <code>hexo clean</code> 来清除 Hexo 的缓存。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+
+<p>此时即可使用浏览器访问 <code>http://localhost:4000</code>，检查站点是否正确运行。结果如下：</p>
+<p><img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/test/202307012104281.png" alt="image-20230701210414232"></p>
+<p>更多的主题配置修改请参考官方文档，如昵称、头像等。</p>
+<h1 id="搭建图床"><a href="#搭建图床" class="headerlink" title="搭建图床"></a>搭建图床</h1><p>自建博客需要服务器来托管图片，我在尝试了 GitHub、Gitee 等多个免费的图床后深刻地领悟到了“免费的才是最贵的”这一道理。故最后选用阿里云对象存储OSS作为图床。</p>
+<p>详细教程可参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/muxuen/article/details/122441469">Typora+PicGo+阿里云OSS搭建博客图床（超详细）_慕雪华年的博客-CSDN博客</a></p>
+<p>至此，基本的博客搭建步骤就已经全部完成。后续我计划再逐步完善主题样式，并进一步提高博客内容质量，为大家分享我在学习过程中的经验和思考。</p>
+<hr>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">文档 | Hexo</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.github.com/zh/pages/quickstart">GitHub Pages 快速入门 - GitHub 文档</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/26625249">GitHub+Hexo 搭建个人网站详细教程 - 知乎 (zhihu.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/60578464">使用 Hexo+GitHub 搭建个人免费博客教程（小白向） - 知乎 (zhihu.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/348582846">安装并优化 NexT 主题 - 知乎 (zhihu.com)</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/06/23/%E6%90%AD%E5%BB%BA%E5%9F%BA%E4%BA%8E-github-hexo-%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" data-id="cmap5xret0007zgi23heuai7f" data-title="搭建基于 GitHub + Hexo 的个人博客" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-pages/" rel="tag">github pages</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/07/02/ChatGPT-prompts/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          ChatGPT prompts 合集
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%99/">博客建站</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A7%91%E7%A0%94/">科研</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChatGPT/" rel="tag">ChatGPT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Latex/" rel="tag">Latex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-pages/" rel="tag">github pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ChatGPT/" style="font-size: 10px;">ChatGPT</a> <a href="/tags/Latex/" style="font-size: 10px;">Latex</a> <a href="/tags/github-pages/" style="font-size: 10px;">github pages</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;">博客</a> <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 20px;">网络</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">五月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">八月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">七月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">六月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/05/15/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/11/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/24/Latex-%E5%A4%87%E5%BF%98%E5%BD%95/">Latex 备忘录</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/12/%E6%97%A0%E7%9B%91%E7%9D%A3%E7%BD%91%E7%BB%9C%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E7%A0%94%E7%A9%B6-%E5%89%8D%E5%AF%BC%E7%9F%A5%E8%AF%86/">无监督网络入侵检测研究 前导知识</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/02/ChatGPT-prompts/">ChatGPT prompts 合集</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 Liang Chenrui<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
