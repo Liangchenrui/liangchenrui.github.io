@@ -65,7 +65,7 @@
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2025/11/06/AI-Agent-意图识别调研/" rel="bookmark">
+      <a href="/2025/11/06/AI-Agent：意图识别调研/" rel="bookmark">
         <time class="entry-date published" datetime="2025-11-06T07:21:14.000Z">
           2025-11-06
         </time>
@@ -79,12 +79,14 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="1-概述"><a href="#1-概述" class="headerlink" title="1 概述"></a>1 概述</h1><p>区分两种不同类型的意图识别：</p>
+        <p>如何将用户输入映射到预定义的意图类别，如直接调用大模型、联网搜索、工具调用？</p>
+<span id="more"></span>
+<h1 id="1-概述"><a href="#1-概述" class="headerlink" title="1 概述"></a>1 概述</h1><p>区分两种不同类型的意图识别：</p>
 <ul>
 <li><strong>系统路由型意图识别</strong>（或称<strong>语义路由</strong>）：对话系统首先判断用户请求应由哪种处理模块来响应，如直接让大语言模型回答、调用搜索引擎检索、或者调用某个特定工具来处理。其核心目标是<strong>路由</strong>：将用户的自然语言查询分发到最合适的子系统或知识源，从而获得最优的答案。</li>
 <li><strong>任务导向型意图识别</strong>是传统任务型对话中的概念，其目的是判断用户的具体目标或意图类别，例如用户想“预订航班”还是“查询天气”等。这种识别往往发生在对话的自然语言理解模块，用于将用户语句映射到预定义的任务类别，并识别所需的槽位信息。</li>
 </ul>
-<p>本次调研希望解决的任务场景是：</p>
+<p>本次调研针对的任务场景是：</p>
 <ul>
 <li>分类任务：将用户输入映射到预定义的意图类别（直接调用大模型、联网搜索、工具调用）</li>
 </ul>
