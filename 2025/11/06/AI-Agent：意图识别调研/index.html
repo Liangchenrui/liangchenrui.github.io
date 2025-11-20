@@ -81,6 +81,7 @@
       
         <p>如何将用户输入映射到预定义的意图类别，如直接调用大模型、联网搜索、工具调用？</p>
 <span id="more"></span>
+
 <h1 id="1-概述"><a href="#1-概述" class="headerlink" title="1 概述"></a>1 概述</h1><p>区分两种不同类型的意图识别：</p>
 <ul>
 <li><strong>系统路由型意图识别</strong>（或称<strong>语义路由</strong>）：对话系统首先判断用户请求应由哪种处理模块来响应，如直接让大语言模型回答、调用搜索引擎检索、或者调用某个特定工具来处理。其核心目标是<strong>路由</strong>：将用户的自然语言查询分发到最合适的子系统或知识源，从而获得最优的答案。</li>
@@ -95,10 +96,10 @@
 <h3 id="SetFit（Sentence-Transformer-Fine-tuning）-2022-09-22"><a href="#SetFit（Sentence-Transformer-Fine-tuning）-2022-09-22" class="headerlink" title="SetFit（Sentence Transformer Fine-tuning）(2022.09.22)"></a><strong>SetFit（Sentence Transformer Fine-tuning）(2022.09.22)</strong></h3><p>两阶段训练过程：</p>
 <ol>
 <li>首先在少量标注样例 (典型值是每类 8 个或 16 个样例) 上微调一个 Sentence Transformer 模型。</li>
-<li>然后用微调得到的 Sentence Tranformer 的模型生成文本的嵌入 (embedding) ，并用这些嵌入训练一个分类头 (classification head) 。<br><img src="https://free4inno.feishu.cn/space/api/box/stream/download/asynccode/?code=MDFlYzFkMjU4MzM0YmQ4Yzc5ZGNhOThjYTQ2ODE5NTlfYXh4bmlFZkROTlM1dXY3U3c5d3RpZlVWV1FodjlXbnJfVG9rZW46SVk0TWJ6SE9zbzRNcWx4cGlrb2NiTFNUbmZoXzE3NjI0MTM2OTc6MTc2MjQxNzI5N19WNA"></li>
+<li>然后用微调得到的 Sentence Tranformer 的模型生成文本的嵌入 (embedding) ，并用这些嵌入训练一个分类头 (classification head) 。<br><img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/obsidian/20251107141630766.PNG" alt="1280X1280.PNG"></li>
 </ol>
 <p>SetFit 仅需8个样本(few-shot learing)即可达到与在全量数据（3k个样本）微调RoBERTa Large相当的准确度，且训练和推理速度快得多。此外，还有传统的BERT&#x2F;XLNet微调方法，以及LSTM+注意力等。</p>
-<p><img src="https://free4inno.feishu.cn/space/api/box/stream/download/asynccode/?code=NzE1MThjYjJlNDFkMGJkOGY4MDk4YzA3NDc0ODAzMDZfWkVzWlpERHRkSXN3YWE3a2p0OUFsaTlnb0U4SVdJdHhfVG9rZW46TG10aWJnV1Iwb0VUNll4Z3lPcWNxdzVibkJkXzE3NjI0MTM2OTc6MTc2MjQxNzI5N19WNA"></p>
+<p><img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/obsidian/20251107141711666.PNG" alt="1280X1280 (1).PNG"></p>
 <p>RAFT 排行榜上表现突出的方法 (截至 2022 年 9 月)：</p>
 <table>
 <thead>
@@ -242,15 +243,14 @@
 </ul>
 <h3 id="Langchain-EmbeddingRouterChain"><a href="#Langchain-EmbeddingRouterChain" class="headerlink" title="Langchain.EmbeddingRouterChain"></a>Langchain.EmbeddingRouterChain</h3><p>Langchain 提供了<code>EmbeddingRouterChain</code> ，用向量搜索做路由。<br>首先定义所有意图的“名称+描述”对，并用句子嵌入模型编码到内存向量库；用户输入的文本经同一嵌入模型编码后，与库中意图嵌入做相似度检索，选择相似度最高的意图对应的下游Chain。</p>
 <h2 id="2-4-提示词驱动"><a href="#2-4-提示词驱动" class="headerlink" title="2.4 提示词驱动"></a>2.4 提示词驱动</h2><ul>
-<li>《Intent Detection in the Age of LLMs》（2024.10.02）：使用大模型的自适应上下文学习（adaptive in-context learning, ICL）和思维链（chain-of-thought, CoT）提示法改进意图识别。与通过对比微调设定的句向量分类器 SetFit 模型相比，预测质量和延迟方面的表现更优。<ul>
+<li><p>《Intent Detection in the Age of LLMs》（2024.10.02）：使用大模型的自适应上下文学习（adaptive in-context learning, ICL）和思维链（chain-of-thought, CoT）提示法改进意图识别。与通过对比微调设定的句向量分类器 SetFit 模型相比，预测质量和延迟方面的表现更优。</p>
+<ul>
 <li><strong>自适应ICL</strong>：系统会将在推理阶段收到的用户查询与一个向量数据库中的训练查询嵌入进行比较，然后检索 k 个最相似的查询作为 ICL 示例，这些示例随后被用来构建 LLM 的提示，以帮助 LLM 更好地检测新查询的意图。（提供示例教模型）(GPT-3)</li>
-<li><strong>CoT</strong>：一种提示技术。给 LLM 的提示中包含一条指令，要求它在给出最终答案之前先”生成你的推理”（Generate your reasoning before…）。这种方法促使 LLM 在输出最终的“预测意图” 之前，先一步一步地生成其思考过程，从而提高其准确性。（引导模型生成推理过程）</li>
+<li><strong>CoT</strong>：一种提示技术。给 LLM 的提示中包含一条指令，要求它在给出最终答案之前先”生成你的推理”（Generate your reasoning before…）。这种方法促使 LLM 在输出最终的“预测意图” 之前，先一步一步地生成其思考过程，从而提高其准确性。（引导模型生成推理过程）<br><img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/obsidian/20251107141739163.png" alt="bbfdde10-8d81-4c70-a4a9-6464ab4b62c0.png"></li>
 </ul>
 </li>
-</ul>
-<p><img src="https://free4inno.feishu.cn/space/api/box/stream/download/asynccode/?code=MDdhMjMzMzVmNDk0ZTk3YWY0OTYzYTNhMzE0NjFlZTBfY0pncjNXb0dtUTJGbXJEV0pkSE1SU0tzbEozdE9oVTNfVG9rZW46SjFhd2JtTUVIb1hmaEp4RDEyRmM2Z0c5blRlXzE3NjI0MTM2OTc6MTc2MjQxNzI5N19WNA"></p>
-<ul>
-<li>LangChain提供了 <code>LLMRouterChain</code> ，用 LLM 做路由；</li>
+<li><p>LangChain提供了 <code>LLMRouterChain</code> ，用 LLM 做路由；</p>
+</li>
 </ul>
 <h2 id="2-5-混合策略"><a href="#2-5-混合策略" class="headerlink" title="2.5 混合策略"></a>2.5 混合策略</h2><ul>
 <li>《Intent Detection in the Age of LLMs》进一步提出混合系统（SetFit+LLM）：<ul>
@@ -360,7 +360,7 @@
 </li>
 <li>输出是结构化的 JSON 对象，而非自然语言。将意图识别的结果从“意图标签”提升到“可执行的指令”。</li>
 </ul>
-<p><img src="https://free4inno.feishu.cn/space/api/box/stream/download/asynccode/?code=MjkxMzE4NzU3NTkwOGRhMTYwNTc3MDQ4NGU3N2JlOTVfTVZycnJScUlTazVBaDRMQXJwWFppWkZvSzRNSkNyRzRfVG9rZW46UmR5Z2JyZXpKb1NadzN4SmQ2Q2N0WTBDbk1lXzE3NjI0MTM2OTc6MTc2MjQxNzI5N19WNA"></p>
+<p><img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/obsidian/20251107141757324.png" alt="32718bdf-f173-4667-b1ac-b11a5ee8a420.png"></p>
 <p>参考资料：</p>
 <blockquote>
 <ol>
