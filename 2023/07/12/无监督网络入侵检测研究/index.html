@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>无监督网络入侵检测研究 | lcr&#39;s blog | Stay hungry. Stay foolish</title>
+
+  
+  <meta name="author" content="Liang Chenrui">
+  
+
+  
+  <meta name="description" content="personal blog">
+  
+
+  
+  
+  <meta name="keywords" content="网络">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="无监督网络入侵检测研究"/>
+
+  <meta property="og:site_name" content="lcr&#39;s blog"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="lcr&#39;s blog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">lcr&#39;s blog</a>
+    </h1>
+    <p class="site-description">Stay hungry. Stay foolish</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>无监督网络入侵检测研究</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2023/07/12/无监督网络入侵检测研究/" rel="bookmark">
+        <time class="entry-date published" datetime="2023-07-12T13:54:59.000Z">
+          2023-07-12
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>北京邮电大学大学生创新创业项目：</p>
+<p>根据立项书和论文，总结了研究领域的一部分基础知识。</p>
+<span id="more"></span>
+
+<h1 id="入侵检测系统-IDS"><a href="#入侵检测系统-IDS" class="headerlink" title="入侵检测系统 (IDS)"></a>入侵检测系统 (IDS)</h1><p>IDS（入侵检测系统）是一种安全工具，旨在检测计算机系统、网络或应用程序中的恶意活动和安全漏洞。它通过监视计算机系统、网络或应用程序的活动来检测潜在的入侵行为，并发出警报以通知管理员采取适当的措施。</p>
+<ul>
+<li><strong>NIDS（Network- based intrusion detection system）</strong></li>
+</ul>
+<p>IDS 分类：</p>
+<h2 id="1-基于特征的系统-signature-based-system"><a href="#1-基于特征的系统-signature-based-system" class="headerlink" title="1. 基于特征的系统 (signature-based system)"></a>1. 基于特征的系统 (signature-based system)</h2><p>要求根据以前的攻击知识来产生一个准确的特征。特征可以是预定义的，也可以通过机器学习算法自动提取。</p>
+<h2 id="2-基于异常的系统-anomaly-based-system"><a href="#2-基于异常的系统-anomaly-based-system" class="headerlink" title="2. 基于异常的系统 (anomaly-based system)"></a>2. 基于异常的系统 (anomaly-based system)</h2><p>不依赖现有攻击的以前知识，可以检测到未知攻击，具有较好的自适应性，但可能存在较高的误报率。</p>
+<h1 id="图神经网络（Graph-Neural-Networks，GNN）"><a href="#图神经网络（Graph-Neural-Networks，GNN）" class="headerlink" title="图神经网络（Graph Neural Networks，GNN）"></a>图神经网络（Graph Neural Networks，GNN）</h1><p>GNN是深度学习在图结构上的一个分支。GNN是一种连接模型，通过网络中节点之间的信息传递的方式来获取图中的依存关系，GNN通过从节点任意深度的邻居来更新该节点状态，这个状态能够表示状态信息。</p>
+<p>GNN是对图上的<strong>所有属性进行的一个可以优化的变换</strong>，它的输入是一个图，输出也是个图。<strong>可以把图神经网络看做是一个图数据的在三个维度的特征提取器。</strong></p>
+<ul>
+<li>图卷积网络（Graph Convolution Networks，GCN）</li>
+</ul>
+<p>将卷积运算从传统数据（例如图像）推广到图数据。</p>
+<ul>
+<li><p>图注意力网络（Graph Attention Networks）</p>
+</li>
+<li><p>图的自编码(Graph Autoencoders)</p>
+<p>该模型通常使用无监督学习(unsupervised)的方式。</p>
+</li>
+</ul>
+<p><strong>不同GNN的本质差别就在于它们如何进行节点之间的信息传递和计算，也就是它们的消息传递机制不同。</strong></p>
+<h1 id="无监督学习-Unsupervised-Learning"><a href="#无监督学习-Unsupervised-Learning" class="headerlink" title="无监督学习 (Unsupervised Learning)"></a>无监督学习 (Unsupervised Learning)</h1><p>监督学习：一种目的明确的训练方式，通过已知因素和已知的结果，通过机器训练，使机器能学会通过已知因素得到未知的结果。</p>
+<p>无监督学习：没有给定事先标记过的训练示例，自动对输入的资料进行分类或分群，再根据这些数据分析这些数据的特征。本质上是一个统计手段，在没有标签的数据里可以发现潜在的一些结构的一种训练方式。</p>
+<p>无监督学习的主要运用包含：聚类分析（cluster analysis）、关系规则（association rule）、维度缩减（dimensionality reduce）。</p>
+<p>特点：</p>
+<ul>
+<li><p><strong>没有明确的目的</strong></p>
+</li>
+<li><p><strong>不需要给数据打标签</strong></p>
+</li>
+<li><p><strong>无法量化效果</strong></p>
+</li>
+</ul>
+<p>常见的两类无监督算法：</p>
+<ul>
+<li>聚类</li>
+</ul>
+<p>简单说就是一种自动分类的方法，在监督学习中，你很清楚每一个分类是什么，但是聚类则不是，你并不清楚聚类后的几个分类每个代表什么意思。</p>
+<ul>
+<li>降维</li>
+</ul>
+<p>降维看上去很像压缩。这是为了在尽可能保存相关的结构的同时降低数据的复杂度。</p>
+<h1 id="扩散模型（Diffusion-Models）"><a href="#扩散模型（Diffusion-Models）" class="headerlink" title="扩散模型（Diffusion Models）"></a>扩散模型（Diffusion Models）</h1><p>用于图像生成。实现从噪声（采样自简单的分布）生成目标数据样本。</p>
+<p>扩散模型包括两个过程：前向过程（forward process）和反向过程（reverse process），其中前向过程又称为扩散过程（diffusion process）。无论是前向过程还是反向过程都是一个参数化的马尔可夫链（Markov chain），其中反向过程可用于生成数据样本。</p>
+<p>参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/563661713">扩散模型之DDPM - 知乎 (zhihu.com)</a></p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/其他/">其他</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/网络/">网络</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2026 Liang Chenrui
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

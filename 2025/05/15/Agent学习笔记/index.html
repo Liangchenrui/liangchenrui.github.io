@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Agent学习笔记 | lcr&#39;s blog | Stay hungry. Stay foolish</title>
+
+  
+  <meta name="author" content="Liang Chenrui">
+  
+
+  
+  <meta name="description" content="personal blog">
+  
+
+  
+  
+  <meta name="keywords" content="Agent,LLM">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="Agent学习笔记"/>
+
+  <meta property="og:site_name" content="lcr&#39;s blog"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="lcr&#39;s blog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">lcr&#39;s blog</a>
+    </h1>
+    <p class="site-description">Stay hungry. Stay foolish</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>Agent学习笔记</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2025/05/15/Agent学习笔记/" rel="bookmark">
+        <time class="entry-date published" datetime="2025-05-15T10:01:05.000Z">
+          2025-05-15
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>记录从文章、视频中学习到的 AI Agent 内容。</p>
+<span id="more"></span>
+
+<h1 id="起源：LLM"><a href="#起源：LLM" class="headerlink" title="起源：LLM"></a>起源：LLM</h1><p>LLM进化树：</p>
+<p>![[Pasted image 20250108193022.png]]</p>
+<ul>
+<li>基于 Transformer 的模型显示为非灰色颜色</li>
+<li>仅解码器模型显示为<strong>蓝色分支</strong>（目前集中到 GPT（闭源）和 LLaMa（开源）两个模型上），擅长“预测下一词”</li>
+<li>仅编码器模型显示为<strong>粉红色分支</strong>，擅长“完形填空”</li>
+<li>而编码器-解码器模型显示为<strong>绿色分支</strong></li>
+<li>时间轴上模型的垂直位置代表其发布日期</li>
+<li>开源模型由实心方块表示, 而闭源模型由空心方块表示</li>
+<li>右下角的堆叠条形图显示来自各公司和机构的模型数量</li>
+<li>论文：<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2304.13712">[2304.13712] Harnessing the Power of LLMs in Practice: A Survey on ChatGPT and Beyond</a></li>
+<li>GitHub：<a target="_blank" rel="noopener" href="https://github.com/Mooler0410/LLMsPracticalGuide">Mooler0410&#x2F;LLMsPracticalGuide: A curated list of practical guide resources of LLMs (LLMs Tree, Examples, Papers)</a></li>
+</ul>
+<h1 id="从-LLM-到-AI-Agent"><a href="#从-LLM-到-AI-Agent" class="headerlink" title="从 LLM 到 AI Agent"></a>从 LLM 到 AI Agent</h1><p>通过引入行动能力、长期记忆机制和工具整合功能，AI Agent 能弥补当前大模型的不足，使其不仅能回答问题，还能真正去“做”事情。<br><img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/img/202505151801563.png" alt="image.png"></p>
+<p>忽略 Agent 感知和环境的反馈，得到 OpenAI 的模型图：<br><img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/img/202505151801925.png" alt="image.png"></p>
+<p> <img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/img/202505151802040.png" alt="image.png"></p>
+<ul>
+<li>使用框架构建 Agent 系统：LangChain</li>
+<li>工具：LLM 通过使用工具与外部数据和服务进行交互，使 Agent 访问和处理现实世界的信息，即：工具弥合了智能体内部功能和外部世界的差距。工具的形式通常与 Web API（GET、POST、PUT、DELETE）保持一致。</li>
+</ul>
+<p>通用 Agent 架构和组件：</p>
+<ul>
+<li>模型</li>
+<li>工具</li>
+<li>编排层：循环过程，是 Agent 的核心。负责维护记忆、状态、推理和计划。</li>
+<li><img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/img/202505151802394.png" alt="image.png"></li>
+</ul>
+<p>模型能够与之交互的工具类型：扩展、函数、数据存储（向量数据库）<br><img src="https://liangchenrui.oss-cn-beijing.aliyuncs.com/img/202505151802090.png" alt="image.png"></p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Agent/">Agent</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Agent/">Agent</a><a href="/tags/LLM/">LLM</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2026 Liang Chenrui
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>
