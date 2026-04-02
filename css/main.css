@@ -1823,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #3d0696;
+  background: #afb1ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3012,6 +3012,7 @@ hr {
 .theme-next.pisces .header-inner {
   background: #faf9f5;
   border: 1px solid rgba(232,230,220,0.95);
+  border-radius: 12px;
   box-shadow: 0 4px 24px rgba(20,20,19,0.05);
   overflow: visible;
 }
@@ -3028,6 +3029,58 @@ hr {
 }
 .theme-next.pisces .site-meta .site-subtitle {
   color: #b0aea5;
+}
+.theme-next.pisces .merged-site-profile {
+  padding: 18px 22px 6px;
+  text-align: center;
+}
+.theme-next.pisces .merged-site-profile-avatar {
+  display: block;
+  width: 84px;
+  height: 84px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e8e6dc;
+}
+.theme-next.pisces .merged-site-profile-name {
+  margin: 0;
+  color: #141413;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.theme-next.pisces .merged-site-profile-school {
+  margin: 6px 0 0;
+  color: rgba(20,20,19,0.58);
+  font-size: 12px;
+}
+.theme-next.pisces .merged-site-profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 10px;
+  margin-top: 14px;
+}
+.theme-next.pisces .merged-site-profile-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  color: rgba(20,20,19,0.78);
+  border: 1px solid rgba(232,230,220,0.95);
+  border-radius: 999px;
+  background: rgba(232,230,220,0.3);
+  border-bottom: none;
+}
+.theme-next.pisces .merged-site-profile-link:hover {
+  color: #d97757;
+  border-color: rgba(217,119,87,0.28);
+  background: rgba(232,230,220,0.7);
+}
+.theme-next.pisces .site-nav {
+  margin-top: 14px;
+  padding: 16px 14px 10px;
+  border-top: 1px solid rgba(232,230,220,0.95);
 }
 .theme-next.pisces .menu .menu-item a {
   color: rgba(20,20,19,0.88);
@@ -3078,89 +3131,8 @@ hr {
 .menu-item-active a {
   border-bottom-color: rgba(217,119,87,0.9);
 }
-.page-home .home-profile--narrow-only {
-  display: none;
-}
-@media (max-width: 991px) {
-  .page-home .home-profile--narrow-only {
-    display: block;
-    margin-bottom: 22px;
-  }
-}
-.page-home .home-profile--in-sidebar {
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  margin-bottom: 12px;
-}
-.page-home .sidebar .links-of-author {
-  display: none;
-}
 .page-home .home-posts {
   min-width: 0;
-}
-.page-home .home-profile-card {
-  padding: 22px 20px;
-  background: rgba(232,230,220,0.45);
-  border: 1px solid rgba(232,230,220,0.95);
-  border-radius: 12px;
-  box-shadow: 0 6px 28px rgba(20,20,19,0.04);
-  text-align: center;
-}
-.page-home .home-profile--in-sidebar .home-profile-card {
-  padding: 16px 12px;
-}
-.page-home .home-profile-avatar {
-  width: 112px;
-  height: 112px;
-  margin: 0 auto 14px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #e8e6dc;
-}
-.page-home .home-profile--in-sidebar .home-profile-avatar {
-  width: 96px;
-  height: 96px;
-}
-.page-home .home-profile-name {
-  margin: 0 0 8px;
-  font-size: 1.25em;
-  font-weight: 600;
-  color: #141413;
-}
-.page-home .home-profile--in-sidebar .home-profile-name {
-  font-size: 1.1em;
-  word-break: break-word;
-}
-.page-home .home-profile-school {
-  margin: 0 0 10px;
-  font-size: 13px;
-  color: rgba(20,20,19,0.58);
-}
-.page-home .home-profile-tagline {
-  margin: 0 0 10px;
-  font-size: 14px;
-  color: #b0aea5;
-}
-.page-home .home-profile-bio {
-  margin: 0 0 16px;
-  font-size: 13px;
-  line-height: 1.55;
-  color: rgba(20,20,19,0.65);
-  text-align: left;
-}
-.page-home .home-profile-social {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px 14px;
-}
-.page-home .home-profile-social-item a {
-  font-size: 13px;
-  border-bottom: none;
-}
-.page-home .home-profile-social-item a:hover {
-  color: #d97757;
 }
 .pisces .sidebar {
   background: rgba(232,230,220,0.35);
