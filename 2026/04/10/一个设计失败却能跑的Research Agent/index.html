@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lora:300,300italic,400,400italic,700,700italic|Poppins:300,300italic,400,400italic,700,700italic|Lora:300,300italic,400,400italic,700,700italic|Poppins:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="# Add your tags here," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="“寻找 AI 全能王”阿里云 Data+AI 工程师全球大奖赛：Agent 构建挑战赛第 8 名，初赛成绩 0.686869，复赛成绩 0.52。  本次比赛的题目要求是构建一个能够在 100 道复杂题目上尽可能稳定作答的 Research Agent。题目覆盖事实验证、多跳推理、时间约束、实体对齐、语言格式约束，以及部分数字和单位类问题。 内容概览本文记录一次比赛中的 Agent 工程实践复盘">
+<meta property="og:type" content="article">
+<meta property="og:title" content="竞赛记录-一个设计失败却能跑的Research Agent">
+<meta property="og:url" content="https://liangchenrui.github.io/2026/04/10/%E4%B8%80%E4%B8%AA%E8%AE%BE%E8%AE%A1%E5%A4%B1%E8%B4%A5%E5%8D%B4%E8%83%BD%E8%B7%91%E7%9A%84Research%20Agent/index.html">
+<meta property="og:site_name" content="lcr&#39;s blog">
+<meta property="og:description" content="“寻找 AI 全能王”阿里云 Data+AI 工程师全球大奖赛：Agent 构建挑战赛第 8 名，初赛成绩 0.686869，复赛成绩 0.52。  本次比赛的题目要求是构建一个能够在 100 道复杂题目上尽可能稳定作答的 Research Agent。题目覆盖事实验证、多跳推理、时间约束、实体对齐、语言格式约束，以及部分数字和单位类问题。 内容概览本文记录一次比赛中的 Agent 工程实践复盘">
+<meta property="og:locale">
+<meta property="article:published_time" content="2026-04-10T03:23:53.000Z">
+<meta property="article:modified_time" content="2026-04-10T03:25:58.129Z">
+<meta property="article:author" content="Liang Chenrui">
+<meta property="article:tag" content="# Add your tags here">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://liangchenrui.github.io/2026/04/10/一个设计失败却能跑的Research Agent/"/>
+
+
+
+
+
+  <title>竞赛记录-一个设计失败却能跑的Research Agent | lcr's blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">lcr's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Stay hungry. Stay foolish</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<div class="merged-site-profile" itemprop="author" itemscope itemtype="http://schema.org/Person" aria-label="博主信息">
+  
+    <img class="merged-site-profile-avatar" itemprop="image"
+      src="https://github.com/Liangchenrui.png"
+      alt="Liang Chenrui" />
+  
+
+  <div class="merged-site-profile-meta">
+    <p class="merged-site-profile-name" itemprop="name">Liang Chenrui</p>
+    
+  </div>
+
+  
+    <div class="merged-site-profile-links">
+      
+        <a class="merged-site-profile-link" href="https://github.com/Liangchenrui" target="_blank" rel="noopener" title="GitHub">
+          
+            <i class="fa fa-fw fa-github"></i>
+          
+          
+            <span>GitHub</span>
+          
+        </a>
+      
+    </div>
+  
+</div>
+
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liangchenrui.github.io/2026/04/10/%E4%B8%80%E4%B8%AA%E8%AE%BE%E8%AE%A1%E5%A4%B1%E8%B4%A5%E5%8D%B4%E8%83%BD%E8%B7%91%E7%9A%84Research%20Agent/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/Liangchenrui.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lcr's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">竞赛记录-一个设计失败却能跑的Research Agent</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2026-04-10T11:23:53+08:00">
+                2026-04-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Add-your-categories-here/" itemprop="url" rel="index">
+                    <span itemprop="name"># Add your categories here</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>“寻找 AI 全能王”阿里云 Data+AI 工程师全球大奖赛：Agent 构建挑战赛第 8 名，初赛成绩 0.686869，复赛成绩 0.52。</p>
+</blockquote>
+<p>本次比赛的题目要求是构建一个能够在 100 道复杂题目上尽可能稳定作答的 Research Agent。题目覆盖事实验证、多跳推理、时间约束、实体对齐、语言格式约束，以及部分数字和单位类问题。</p>
+<h2 id="内容概览"><a href="#内容概览" class="headerlink" title="内容概览"></a>内容概览</h2><p>本文记录一次比赛中的 Agent 工程实践复盘，重点包括：</p>
+<ol>
+<li>一个“Planner + Searcher + Reasoner”三组件架构的设计与落地流程。</li>
+<li>复赛期间围绕搜索稳定性、提示词和异常兜底做的主要迭代。</li>
+<li>对模型能力、工程能力、日志系统和团队协作的赛后反思。</li>
+<li>开源仓库地址与后续可改进方向。</li>
+</ol>
+<span id="more"></span>
+
+<h2 id="1-设计思路"><a href="#1-设计思路" class="headerlink" title="1. 设计思路"></a>1. 设计思路</h2><p>我们团队开始参与比赛的时间比较晚，所以一开始的设计比较仓促：让 AI 根据题目要求设计了一个能跑的架构，就开始编码实现。赛后（甚至赛中）回过头来看，制约我们上限的根源就在这里。</p>
+<p>其实在几个月前，团队成员曾系统性地对 Agent&#x2F;Multi-Agent 的 Planning 做过调研，但习得成果并没有很好地沉淀为实际工程开发能力。</p>
+<p>我们设计的 Agent 有 3 个核心组件：负责规划的 Planner、负责联网搜索的 Searcher、负责多轮推理的 Reasoner。回答问题的基本流程如下：</p>
+<ol>
+<li>首先由 Planner 对问题做 Hop-1 规划：提取高信息量线索，区分“第一步该解决的未知数”和“后续再验证的条件”，只生成首轮搜索计划，而不是直接尝试回答整道题。</li>
+<li>接着由 Searcher 根据 Planner 生成的查询进行首轮并行搜索。这里采用混合检索策略，同时结合语义搜索和关键词搜索，从多个搜索源召回候选证据，并对结果进行清洗、去重和压缩，形成初始证据集合。</li>
+<li>然后将“问题本身 + Planner 的意图 + 首轮检索到的初始证据”一并交给 Reasoner。Reasoner 进入多轮推理循环，先根据已有证据判断当前最可能的候选实体或结论，再决定是否需要发起下一轮搜索。</li>
+<li>如果信息仍然不足，Reasoner 会继续调用 Searcher 做补充检索，逐步完成实体确认、关系验证、时间核对和答案对齐，直到满足作答条件。这个阶段本质上是一个带工具调用的 ReAct 式推理过程。</li>
+<li>当 Reasoner 认为证据已经充分时，输出最终答案，并由系统提取最终结论返回给用户或写入评测结果。</li>
+</ol>
+<h2 id="2-赛中挣扎"><a href="#2-赛中挣扎" class="headerlink" title="2. 赛中挣扎"></a>2. 赛中挣扎</h2><p>按上述设计实现的 Agent，实际跑分效果并不好。初赛阶段只能得到 0.3-0.5 的分数，且由于搜索工具和大模型黑盒的不稳定性，多次跑分差异也较大。</p>
+<p>为了提高复赛中的稳定性，我们不断加入多种兜底机制，包括首轮搜索失败后的泛化回退、搜索结果去重与截断、工具调用异常重试，以及模型未正确调用工具时的补救处理。</p>
+<p>我们认为，决定 Research Agent 准确率的四大因素是：模型能力、Agent 架构、联网搜索策略和提示词工程。在紧张赛程内再次调整整体架构已不太可行，所以我们把时间和精力集中到后两点上。</p>
+<h3 id="2-1-关于联网搜索工具"><a href="#2-1-关于联网搜索工具" class="headerlink" title="2.1 关于联网搜索工具"></a>2.1 关于联网搜索工具</h3><p>我们采用了混合检索策略：Exa 用作语义搜索，Serper 用作通用关键词搜索，IQS 用作结构化短关键词搜索。这样并行搜索、多源召回能够在兼顾速率与成本的同时，取得较高的准确率和稳定性。</p>
+<p>同时，中文和英文题都可以通过 <code>language</code>、结构化 query 和搜索引擎差异获得互补召回。</p>
+<p>实际测试中我们发现，联网搜索结果很容易受到模型风控影响，导致最后推理总结被强制中断，输出结果为空。直到比赛结束我们也没有找到好的解决方案。</p>
+<p>现在回头看，一个可行的改进方向是在 Searcher 与 Reasoner 之间增加“证据净化与结构化事实抽取层”，并在风控触发后切换到更保守的检索与作答模式，以降低模型暴露于高风险文本的概率。</p>
+<h3 id="2-2-关于提示词"><a href="#2-2-关于提示词" class="headerlink" title="2.2 关于提示词"></a>2.2 关于提示词</h3><p>提示词的持续迭代对 Agent 质量提升效果显著。为了规范模型输出、对齐测试结果和参考答案一致性，我们在提示词中加入了许多约束、边界条件和 few-shot。</p>
+<p>整个流程里有 2 段核心系统提示词：Planner 提示词和 Reasoner 提示词。</p>
+<h3 id="2-3-关于迭代"><a href="#2-3-关于迭代" class="headerlink" title="2.3 关于迭代"></a>2.3 关于迭代</h3><p>在刚参赛时，我们优先选择以一个简单 demo 先跑通阶段二的平台流程。最初 demo 选择了 <code>qwen-max</code> 和 ReAct 架构为核心，但第一次提交成绩时，这个 demo 在阶段 1 的 ACC 十分惨淡，仅有 11% 左右。</p>
+<p>后续调试时发现，完全相同的代码下，<code>qwen-3.5-plus</code> 取得了更优异的成绩（50%+），且费用显著降低，因此我们最终选定 <code>qwen-3.5-plus</code> 作为基模。</p>
+<p>确定模型后，针对 Agent 架构进行了优化迭代：从最初单一角色增加到 Planner、Researcher、最终整理输出格式的三角色架构，并从 Qwen、Gemini 等领先应用在多跳推理上的处理链路中“蒸馏”提示词策略，包括交叉验证、聚焦核心实体、提取高熵关键词、搜索策略优化等。</p>
+<p>对异常情况的处理是最后两天最大的折磨。在冲榜迭代 <code>agent_loop</code> 时，我们发现 <code>qwen-3.5-plus</code> API 在开启 thinking 模式时，常出现模型输出中既无 <code>&lt;tool_call&gt;</code> 也无 <code>&lt;answer&gt;</code> 的情况，而真正的 <code>&lt;tool_call&gt;</code> 会在 thinking 中以伪代码形式输出。</p>
+<p>另外，搜索引擎返回内容不当会高频触发 <code>data_inspection_failed</code> 错误。这两类异常出现概率约 25%+，即 100 题中大约有 25-30 题会出现类似问题。由于开发经验不足，我们在归因和修复上浪费了很多时间；且最后方案偏“打补丁”，效果有限，结果也比较遗憾。</p>
+<h2 id="3-总结反思"><a href="#3-总结反思" class="headerlink" title="3. 总结反思"></a>3. 总结反思</h2><ol>
+<li>封装更强大的工具类，如单位换算、数值计算、数据清洗等。</li>
+<li>对“最后一跳结果”与“题目要求”的对齐不能仅依赖提示词，更应通过结构优化实现检查和回退。</li>
+<li>日志能力欠缺：某个问题回答错误时，只能依赖手动查找平台日志 debug。</li>
+<li>工程上仍不成熟：前期调研和学习不充分，Agent 开发问题处理经验不足，团队协作经验也较少，三人精力分配过于分散。</li>
+<li>基模能力是限制 Agent 的关键因素。同样的 Agent 框架，仅基模不同，ACC 差距可能非常大。</li>
+<li>有时复杂架构效果反而更差，轻量架构可能更优；应以日志和实测结果为依据判断是否调整架构。</li>
+<li>一定要养成保存代码的习惯，尤其在大改架构时，避免效果不佳后无法回退。</li>
+<li>团队分工要明确，责任边界要清晰。</li>
+</ol>
+<p>源码现已开源，欢迎 star 和二开：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/Liangchenrui/Research-Agent-Alibaba-Cloud-Competition-202603">https://github.com/Liangchenrui/Research-Agent-Alibaba-Cloud-Competition-202603</a></p>
+<h2 id="4-致谢"><a href="#4-致谢" class="headerlink" title="4. 致谢"></a>4. 致谢</h2><p>感谢阿里云和通义团队提供的平台与模型支持，感谢北京邮电大学自邮之翼团队提供的比赛经费支持。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Add-your-tags-here/" rel="tag"># # Add your tags here</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2025/11/20/AI-Agent%EF%BC%9A%E8%A7%84%E5%88%92%E8%B0%83%E7%A0%94/" rel="next" title="AI Agent：规划调研">
+                <i class="fa fa-chevron-left"></i> AI Agent：规划调研
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  
+  
+
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Liang Chenrui</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
