@@ -1,660 +1,145 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lora:300,300italic,400,400italic,700,700italic|Poppins:300,300italic,400,400italic,700,700italic|Lora:300,300italic,400,400italic,700,700italic|Poppins:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-
-
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>lcr&#39;s blog</title>
 <meta name="description" content="personal blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="lcr&#39;s blog">
-<meta property="og:url" content="https://liangchenrui.github.io/page/2/index.html">
-<meta property="og:site_name" content="lcr&#39;s blog">
-<meta property="og:description" content="personal blog">
-<meta property="og:locale">
-<meta property="article:author" content="Liang Chenrui">
-<meta name="twitter:card" content="summary">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '',
-    scheme: 'Pisces',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="https://liangchenrui.github.io/page/2/"/>
-
-
-
-
-
-  <title>lcr's blog</title>
-  
-
-
-
-
-
-
-
+<meta name="author" content="Liang Chenrui">
+<link rel="stylesheet" href="/css/main.css">
 
 <meta name="generator" content="Hexo 7.3.0"></head>
+<body class="page-default">
+  <div class="site-shell">
+    <header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-brand" href="/">
+      <span class="site-brand__title">lcr&#39;s blog</span>
+      <span class="site-brand__subtitle">Stay hungry. Stay foolish</span>
+    </a>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">lcr's blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle">Stay hungry. Stay foolish</p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
+    <button class="site-nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span></span>
+      <span></span>
     </button>
+
+    <nav id="site-nav" class="site-nav" aria-label="Primary">
+      
+        <a class="site-nav__link" href="/">Blogs</a>
+      
+        <a class="site-nav__link" href="/publications/">Publications</a>
+      
+        <a class="site-nav__link" href="/talks/">Talks</a>
+      
+        <a class="site-nav__link" href="/about/">About</a>
+      
+    </nav>
   </div>
-</div>
+</header>
 
-<div class="merged-site-profile" itemprop="author" itemscope itemtype="http://schema.org/Person" aria-label="博主信息">
-  
-    <img class="merged-site-profile-avatar" itemprop="image"
-      src="https://github.com/Liangchenrui.png"
-      alt="Liang Chenrui" />
-  
-
-  <div class="merged-site-profile-meta">
-    <p class="merged-site-profile-name" itemprop="name">Liang Chenrui</p>
-    
+    <main class="site-main">
+      <section class="home">
+  <div class="container">
+    <section class="home-hero" aria-labelledby="home-intro">
+  <div class="home-hero__media">
+    <img class="home-hero__avatar" src="https://github.com/Liangchenrui.png" alt="Liang Chenrui">
   </div>
-
-  
-    <div class="merged-site-profile-links">
-      
-        <a class="merged-site-profile-link" href="https://github.com/Liangchenrui" target="_blank" rel="noopener" title="GitHub">
-          
-            <i class="fa fa-fw fa-github"></i>
-          
-          
-            <span>GitHub</span>
-          
-        </a>
-      
-    </div>
-  
-</div>
-
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <div class="home-posts">
-    <section id="posts" class="posts-expand">
-      
-        
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liangchenrui.github.io/2023/06/23/%E6%90%AD%E5%BB%BA%E5%9F%BA%E4%BA%8E-github-hexo-%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/Liangchenrui.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lcr's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2023/06/23/%E6%90%AD%E5%BB%BA%E5%9F%BA%E4%BA%8E-github-hexo-%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" itemprop="url">搭建基于 GitHub + Hexo 的个人博客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2023-06-23T23:26:13+08:00">
-                2023-06-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="index">
-                    <span itemprop="name">博客</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>GitHub Pages 是通过 GitHub 托管和发布的公共网页。  Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a target="_blank" rel="noopener" href="http://daringfireball.net/projects/markdown/">Markdown</a>（或其他标记语言）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-<p>下面正式利用 GitHub Pages 和 Hexo，从零开始搭建我的第一个个人博客。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2023/06/23/%E6%90%AD%E5%BB%BA%E5%9F%BA%E4%BA%8E-github-hexo-%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
+  <div class="home-hero__content">
+    <p class="home-hero__eyebrow">Writing, Research, and Engineering</p>
+    <div class="home-hero__intro" id="home-intro">
+      <p>这里记录 AI Agent、系统设计、工程实践与长期学习中的关键问题，尽量把推理过程写清楚，而不是只留下结论。</p>
+      <p>Research notes on AI agents, systems design, engineering practice, and the slow work behind useful ideas.</p>
     </div>
     
+      <div class="home-hero__actions">
+        <a class="home-hero__link" href="https://github.com/Liangchenrui" target="_blank" rel="noopener">GitHub</a>
+      </div>
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-      
-    </section>
-
-    
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/">&lt;i class&#x3D;&quot;fa fa-angle-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-  </nav>
-
+</section>
 
   </div>
 
-          </div>
-          
-
-
-          
-
-        </div>
+  
+    <section class="home-featured">
+  <div class="container">
+    <div class="home-featured__panel">
+      <div class="home-featured__body">
+        <p class="home-featured__eyebrow">Featured Writing</p>
+        <h2 class="home-featured__title">一个设计失败却能跑的 Research Agent</h2>
+        <p class="home-featured__description">从比赛复盘切入，梳理 Planner、Searcher、Reasoner 的实现取舍，以及为什么“能跑”不等于“架构合理”。</p>
+        <a class="home-featured__cta" href="/2026/04/10/%E7%AB%9E%E8%B5%9B%E8%AE%B0%E5%BD%95-%E4%B8%80%E4%B8%AA%E8%AE%BE%E8%AE%A1%E5%A4%B1%E8%B4%A5%E5%8D%B4%E8%83%BD%E8%B7%91%E7%9A%84Research%20Agent/">查看专题文章</a>
+      </div>
+      <div class="home-featured__visual" aria-hidden="true">
         
-          
-  
-  
-  
-
-  
-
-
+          <div class="featured-figure">
+            <div class="featured-figure__line"></div>
+            <div class="featured-figure__line"></div>
+            <div class="featured-figure__line"></div>
+            <div class="featured-figure__mark"></div>
+          </div>
         
       </div>
+    </div>
+  </div>
+</section>
+
+  
+
+  <div class="container">
+    <section class="home-post-list home-editorial-list">
+  <div class="home-posts-header">
+    <div class="home-posts-label">Editorial List</div>
+    <h2 class="home-posts-title">最新文章</h2>
+    <a class="home-posts-archive" href="/archives/">浏览归档</a>
+  </div>
+
+  <div class="editorial-list editorial-list--home">
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      <article class="editorial-post-item">
+        <div class="editorial-post-date">
+          <time datetime="2023-06-23">2023-06-23</time>
+        </div>
+        <div class="editorial-post-main">
+          <h3 class="editorial-post-title"><a href="/2023/06/23/%E6%90%AD%E5%BB%BA%E5%9F%BA%E4%BA%8E-github-hexo-%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">搭建基于 GitHub + Hexo 的个人博客</a></h3>
+          
+            <p class="editorial-post-summary">GitHub Pages 是通过 GitHub 托管和发布的公共网页。 Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdo…</p>
+          
+        </div>
+      </article>
+    
+  </div>
+</section>
+
+  </div>
+</section>
+
     </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2026</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Liang Chenrui</span>
-
-  
-</div>
-
-
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
+    <footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div>
+      <p class="site-footer__title">lcr&#39;s blog</p>
+      <p class="site-footer__description">记录研究、工程实现与持续学习中的关键问题，而不是只展示结论。</p>
+    </div>
+    <div class="site-footer__meta">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/Liangchenrui" class="site-footer__link">GitHub</a>
+      
+      <span class="site-footer__copyright">© 2026 Liang Chenrui</span>
+    </div>
+  </div>
+</footer>
 
   </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
+  <script src="/js/main.js"></script>
 </body>
 </html>

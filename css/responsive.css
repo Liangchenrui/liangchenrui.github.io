@@ -1,0 +1,107 @@
+@media (max-width: 767px) {
+  .container {
+    padding: 0 18px;
+  }
+  .site-main {
+    padding-top: 24px;
+  }
+  .site-header__inner {
+    min-height: 68px;
+    flex-wrap: wrap;
+  }
+  .site-nav-toggle {
+    display: block;
+  }
+  .site-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 0 0 18px;
+  }
+  .site-header.is-open .site-nav {
+    display: flex;
+  }
+  .home-hero {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-top: 12px;
+  }
+  .home-hero__avatar {
+    width: 148px;
+    height: 148px;
+  }
+  .home-featured__panel {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+  .home-editorial-list {
+    max-width: none;
+    margin-top: 48px;
+  }
+  .home-posts-header {
+    padding-bottom: 22px;
+  }
+  .home-posts-title {
+    max-width: none;
+    font-size: clamp(1.9rem, 8.5vw, 2.5rem);
+    line-height: 1.1;
+  }
+  .home-posts-archive {
+    position: static;
+    display: inline-block;
+    margin-top: 14px;
+  }
+  .editorial-post-item {
+    grid-template-columns: 1fr;
+    row-gap: 8px;
+    padding: 20px 0 24px;
+  }
+  .editorial-post-date {
+    padding-top: 0;
+  }
+  .editorial-post-title {
+    font-size: clamp(1.45rem, 7vw, 2rem);
+    line-height: 1.26;
+  }
+  .editorial-post-summary {
+    margin-top: 8px;
+    font-size: 0.96rem;
+    line-height: 1.68;
+  }
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .post-title,
+  .page-title {
+    font-size: clamp(2.3rem, 10vw, 3.1rem);
+  }
+  .site-footer__inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .site-footer__meta {
+    justify-content: flex-start;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .home-hero {
+    grid-template-columns: 180px minmax(0, 1fr);
+    gap: 32px;
+  }
+  .home-featured__panel {
+    grid-template-columns: 1fr;
+  }
+  .home-editorial-list {
+    max-width: 860px;
+  }
+  .editorial-post-item {
+    grid-template-columns: 120px minmax(0, 1fr);
+    column-gap: 24px;
+  }
+  .editorial-post-title {
+    font-size: clamp(1.65rem, 3vw, 2rem);
+  }
+}

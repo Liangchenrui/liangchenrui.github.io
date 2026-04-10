@@ -1,0 +1,134 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.site-shell {
+  min-height: 100vh;
+}
+.site-main {
+  padding: 40px 0 0;
+}
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(245,244,237,0.94);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e8e6dc;
+}
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 78px;
+}
+.site-brand {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.site-brand__title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.6rem;
+  line-height: 1.1;
+}
+.site-brand__subtitle {
+  color: #87867f;
+  font-size: 0.92rem;
+}
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+.site-nav__link {
+  font-size: 0.98rem;
+  color: #5e5d59;
+}
+.site-nav-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+.site-nav-toggle span {
+  display: block;
+  width: 20px;
+  height: 1.5px;
+  margin: 6px auto;
+  background: #141413;
+}
+.site-footer {
+  margin-top: 80px;
+  padding: 32px 0 48px;
+  border-top: 1px solid #e8e6dc;
+}
+.site-footer__inner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 48px;
+}
+.site-footer__title {
+  margin: 0 0 6px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  color: #141413;
+}
+.site-footer__description {
+  max-width: 38rem;
+  margin: 0;
+  font-size: 1rem;
+}
+.site-footer__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 14px;
+  color: #87867f;
+  font-size: 0.95rem;
+}
+.site-footer__link {
+  color: #5e5d59;
+}
+.page-header,
+.post-header {
+  max-width: 720px;
+  margin: 0 auto 48px;
+}
+.page-header__eyebrow,
+.post-header__eyebrow,
+.section-heading__eyebrow,
+.home-hero__eyebrow,
+.home-featured__eyebrow {
+  margin: 0 0 16px;
+  color: #87867f;
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.page-title {
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+  line-height: 1.08;
+}
+.page-intro {
+  max-width: 34rem;
+  margin-top: 18px;
+}
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 40px;
+}
+.pagination__link {
+  padding: 10px 16px;
+  border-radius: 10px;
+  box-shadow: 0 0 0 1px #e8e6dc;
+  background: #faf9f5;
+}
