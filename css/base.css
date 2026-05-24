@@ -13,6 +13,7 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.6;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 img {
   max-width: 100%;
@@ -26,11 +27,16 @@ a {
 a:hover {
   color: #c96442;
 }
+a:focus-visible {
+  outline: 2px solid #3898ec;
+  outline-offset: 3px;
+}
 p {
   margin: 0 0 16px;
-  font-size: 18px;
-  line-height: 1.8;
+  font-size: 17px;
+  line-height: 1.72;
   color: #5e5d59;
+  overflow-wrap: anywhere;
 }
 h1,
 h2,
@@ -40,6 +46,7 @@ h3 {
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 500;
   line-height: 1.2;
+  overflow-wrap: anywhere;
 }
 ul,
 ol {
@@ -56,23 +63,28 @@ code {
   padding: 2px 6px;
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
   font-size: 0.94rem;
+  color: #30302e;
+  box-shadow: inset 0 0 0 1px rgba(20,20,19,0.04);
 }
 pre {
   overflow: auto;
   margin: 0 0 24px;
   padding: 24px;
   background: #faf9f5;
-  border-radius: 12px;
-  box-shadow: 0 0 0 1px #e8e6dc;
+  border-radius: 16px;
+  box-shadow: 0 0 0 1px #e8e6dc, 0 12px 36px rgba(20,20,19,0.05);
 }
 pre code {
   background: transparent;
   padding: 0;
+  box-shadow: none;
 }
 blockquote {
   margin: 0 0 24px;
-  padding-left: 16px;
+  padding: 18px 22px;
   border-left: 3px solid #c96442;
+  border-radius: 0 16px 16px 0;
+  background: rgba(255,255,255,0.48);
   color: #5e5d59;
 }
 hr {
@@ -83,6 +95,10 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 24px;
+  background: rgba(255,255,255,0.36);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px #f0eee6;
 }
 th,
 td {
@@ -90,6 +106,11 @@ td {
   border-top: 1px solid #e8e6dc;
   text-align: left;
   color: #5e5d59;
+}
+th {
+  color: #141413;
+  background: rgba(232,230,220,0.45);
+  font-weight: 500;
 }
 ::selection {
   background: rgba(201,100,66,0.18);

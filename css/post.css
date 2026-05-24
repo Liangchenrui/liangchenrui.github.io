@@ -1,14 +1,14 @@
 .post-page {
-  padding-top: 10px;
+  padding-top: 14px;
 }
 .post-title {
-  font-size: clamp(3.4rem, 8vw, 4.6rem);
-  line-height: 1.03;
-  letter-spacing: -0.02em;
+  font-size: clamp(3.1rem, 7vw, 4.5rem);
+  line-height: 1.06;
+  text-wrap: balance;
 }
 .page-single {
-  padding-top: 10px;
+  padding-top: 14px;
 }
 .archive-page {
-  padding-top: 10px;
+  padding-top: 14px;
 }
